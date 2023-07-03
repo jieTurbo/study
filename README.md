@@ -1,4 +1,5 @@
 学习内容
+# 务必认真的完成经手事
 
 一、[设计模式](https://github.com/jieTurbo/study/blob/main/page/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.md)
 
