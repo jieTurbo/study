@@ -7,12 +7,13 @@
 #### prototype
 
 每个函数都有一个 prototype，函数的 prototype 指向一个对象，这个对象正是调用该构造函数创建的实例的原型
-原型： javascript 对象（除 null）在创建的时候就会与之关联另一个对象，这个对象就是原型；每个对象都会从原型继承属性
+
+原型： javascript 对象（除null）在创建的时候就会与之关联另一个对象，这个对象就是原型；每个对象都会从原型继承属性
 
 #### `__proto__`
 
 javascript 对象（除 null）都会具有一个属性，`__proto__` , 这个属性会指向该对象的原型
-关联原型组成的的链状接口就是原型链；
+关联原型组成的的链状结构就是原型链；
 
 #### constructor
 
@@ -194,7 +195,7 @@ ECStack.pop();
 
 # JavaScript 深入之作用域链
 
-当查找变量的时候，会在当前上下文变量对象的中查找，如果没有将往父级上下文的变量对象查找，直到查到查找到全局上下文变量（全局变量），这由多个上下文构成的变量对象构成链表叫作用域链
+当查找变量的时候，会在当前上下文变量对象的中查找，如果没有将往父级上下文的变量对象查找，直到查到查找到全局上下文变量（全局变量），这由多个上下文构成的变量对象，构成链表叫作用域链
 
 Reference：参考
 EnvironmentRecord：环境记录
@@ -224,7 +225,7 @@ ECMAScript 中函数传参都是按值传递的
 
 ## Call（呼叫；调用；访问） Apply（申请；适用；套用）模拟实现
 
-> Call 方法在使用一个指定 this 值，和若干个指定的参数值调用函数或者方法
+> Call 方法在若使用一个指定 this 值个指定的参数值调，和干用函数或者方法
 
 ```javascript
 var foo = {
@@ -245,7 +246,7 @@ Function.prototype.call2 = function (context, ...args) {
 Function.prototype.apply2 = function (context, arr) {
   context = context || window;
   context.fn = this;
-  const data = context.fn(...(args || []));
+  const data = context.fn(...(arr || []));
   delete context.fn;
   return data;
 };
